@@ -55,7 +55,7 @@ def main():
         );
     """)
 
-    # Приклад заповнення Departments
+
     cursor.executemany(
         "INSERT INTO Departments (Building, Financing, Name) VALUES (?, ?, ?)",
         [
@@ -65,7 +65,7 @@ def main():
         ]
     )
 
-    # Приклад заповнення Diseases
+
     cursor.executemany(
         "INSERT INTO Diseases (Name, Severity) VALUES (?, ?)",
         [
@@ -75,7 +75,6 @@ def main():
         ]
     )
 
-    # Приклад заповнення Doctors
     cursor.executemany(
         "INSERT INTO Doctors (Name, Surname, Phone, Salary) VALUES (?, ?, ?, ?)",
         [
@@ -84,7 +83,6 @@ def main():
         ]
     )
 
-    # Приклад заповнення Examinations
     cursor.executemany(
         "INSERT INTO Examinations (Name, DayOfWeek, StartTime, EndTime) VALUES (?, ?, ?, ?)",
         [
@@ -93,7 +91,7 @@ def main():
         ]
     )
 
-    # Приклад заповнення Wards
+
     cursor.executemany(
         "INSERT INTO Wards (Name, Building, Floor) VALUES (?, ?, ?)",
         [
@@ -104,7 +102,6 @@ def main():
 
     conn.commit()
 
-    # Перевіримо дані
     cursor.execute("SELECT * FROM Departments")
     print("Departments:", cursor.fetchall())
 
@@ -126,31 +123,3 @@ if __name__ == "__main__":
     main()
 
 
-
-
-#ytyhgjdgiuryeuryreuy
-
-# import sqlite3
-# import pandas as pd
-#
-# conn = sqlite3.connect('hospital.sqlite')
-#
-# # Виведемо таблицю Examinations
-# df_exam = pd.read_sql_query("SELECT * FROM Examinations", conn)
-# print("=== Examinations ===")
-# print(df_exam)
-#
-# # Виведемо таблицю Doctors
-# df_doc = pd.read_sql_query("SELECT * FROM Doctors", conn)
-# print("\n=== Doctors ===")
-# print(df_doc)
-#
-# # Виведемо таблицю Wards
-# df_wards = pd.read_sql_query("SELECT * FROM Wards", conn)
-# print("\n=== Wards ===")
-# print(df_wards)
-#
-# conn.close()
-
-# import os
-# print(os.path.abspath('hospital.sqlite'))
