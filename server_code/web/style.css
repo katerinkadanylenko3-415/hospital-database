@@ -1,0 +1,47 @@
+body{
+  background: pink;
+  font-family: Romance;
+  margin: 0;
+
+}
+
+header {
+   background: #dd13e8;
+   color: white;
+   padding: 20px;
+}
+
+nav{
+   background: #eee;
+   padding: 10px;
+
+}
+
+section{
+  padding:40px;
+}
+
+footer{
+   background: #222;
+   color: white;
+   padding: 20px;
+}
+
+.service{
+   display: flex;
+   gap: 20px;
+
+}
+
+.box{
+    background: blue;
+    padding: 40px;
+}
+
+
+@media (max-width: 786px) {
+  .service{
+     flex-direction: column;
+  }
+}
+
